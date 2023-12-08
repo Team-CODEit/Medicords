@@ -1,3 +1,10 @@
+:root {
+    --theme : #a86eff;
+    --theme-dark : #6600ff;
+    --theme-light : #c7a1ff;
+    --white : #ffffff;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -6,7 +13,6 @@
 }
 
 button {
-    border: none;
     cursor: pointer;
 }
 
@@ -14,13 +20,17 @@ button, input {
     outline: none;
 }
 
+section {
+    padding: 10vh;
+}
+
 header {
     position: fixed;
     justify-content: space-between;
     width: 100vw;
-    padding: 5px 45px;
-    background: #ffffff;
-    z-index: 10;
+    padding: 0 45px;
+    background: var(--white);
+    z-index: 100;
 }
 
 .d-flex {
@@ -28,12 +38,8 @@ header {
     align-items: center;
 }
 
-.d-section {
-    gap: 10px;
-}
-
 .title {
-    color: #aaa3ff;
+    color: var(--theme);
     font-size: 2.7em;
     font-weight: 700;
     font-family: "dhurjati";
@@ -44,57 +50,60 @@ header {
 }
 
 .link {
-    padding: 8px 15px;
-    color: #6236ff;
+    padding: 7px 12px;
+    color: var(--theme-dark);
     font-size: .95em;
     font-weight: 500;
-}
-
-.navbar a {
     text-decoration: none;
 }
 
 .btn {
-    background: #ffffff;
-    /* color: #ffffff; */
-    border: 1px solid #857dff;
-    border-radius: 7px;
+    margin-inline: 5px;
+    background: var(--white);
+    font-size: .9em;
+    border: 1px solid var(--theme-dark);
+    border-radius: 10px;
+    transition: .4s;
+}
+
+.btn:hover {
+    background: var(--theme-dark);
+    color: var(--white);
 }
 
 #landing {
     height: 100vh;
+    padding: 0;
     background: url("../img/bg.jpg") no-repeat;
-    background-position: 350px 80px;
-    background-size: contain;
-    background-blend-mode: darken;
+    background-size: cover;
+    background-position: 220px 70px;
 }
 
-.covered-text {
+.hero-text {
     position: relative;
     flex-direction: column;
+    align-items: start;
     justify-content: center;
-    align-items: left;
     gap: 20px;
-    width: 40%;
-    height: 100%;
-    padding-inline: 50px 10px;
-    background: #857dff;
-    color: #ffffff;
+    width: 45vw;
+    height: 100vh;
+    padding: 9vh;
+    background: var(--theme-dark);
+    color: var(--white);
 }
 
-.covered-text::after {
+.hero-text::after {
     content: '';
     position: absolute;
     left: 100%;
-    border-top: 50vh solid #857dff;
-    border-left: 7vw solid #857dff;
+    border-top: 50vh solid var(--theme-dark);
+    border-left: 60px solid var(--theme-dark);
     border-bottom: 50vh solid transparent;
-    border-right: 7vw solid transparent;
+    border-right: 60px solid transparent;
 }
 
-.inside-text {
-    width: 100%;
-    font-size: 3em;
+.head-text {
+    font-size: 2.8em;
     font-weight: 700;
     text-transform: uppercase;
 }
