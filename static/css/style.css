@@ -1,7 +1,8 @@
 :root {
+    --black : #000000;
     --theme : #a86eff;
-    --theme-dark : #6600ff;
-    --theme-light : #c7a1ff;
+    --theme-dark : #781fff;
+    --theme-light : #ebddff;
     --white : #ffffff;
 }
 
@@ -10,6 +11,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: "poppins", sans-serif;
+    scroll-behavior: smooth;
 }
 
 button {
@@ -20,17 +22,24 @@ button, input {
     outline: none;
 }
 
-section {
-    padding: 10vh;
+section, footer {
+    padding: 12vh 6vw;
 }
 
 header {
     position: fixed;
     justify-content: space-between;
     width: 100vw;
-    padding: 0 45px;
-    background: var(--white);
     z-index: 100;
+}
+
+header, .btn {
+    background: var(--white);
+    transition: .5s;
+}
+
+header, .hero-text {
+    padding: 0 6vw;
 }
 
 .d-flex {
@@ -40,9 +49,12 @@ header {
 
 .title {
     color: var(--theme);
+    font-family: "dhurjati";
+}
+
+.title, .head-text {
     font-size: 2.7em;
     font-weight: 700;
-    font-family: "dhurjati";
 }
 
 .navbar {
@@ -58,17 +70,31 @@ header {
 }
 
 .btn {
-    margin-inline: 5px;
-    background: var(--white);
-    font-size: .9em;
+    margin-inline: 3px;
     border: 1px solid var(--theme-dark);
-    border-radius: 10px;
-    transition: .4s;
+    border-radius: 5px;
+}
+
+.btn, .text-box {
+    font-size: .9em;
 }
 
 .btn:hover {
     background: var(--theme-dark);
     color: var(--white);
+}
+
+.scrolled {
+    background: var(--theme);
+}
+
+.scrolled .title, .scrolled .link {
+    color: var(--white);
+}
+
+.scrolled .btn {
+    border-color: var(--white);
+    background: none;
 }
 
 #landing {
@@ -85,9 +111,8 @@ header {
     align-items: start;
     justify-content: center;
     gap: 20px;
-    width: 45vw;
+    width: 47vw;
     height: 100vh;
-    padding: 9vh;
     background: var(--theme-dark);
     color: var(--white);
 }
@@ -97,17 +122,40 @@ header {
     position: absolute;
     left: 100%;
     border-top: 50vh solid var(--theme-dark);
-    border-left: 60px solid var(--theme-dark);
+    border-left: 50px solid var(--theme-dark);
     border-bottom: 50vh solid transparent;
-    border-right: 60px solid transparent;
+    border-right: 50px solid transparent;
 }
 
 .head-text {
-    font-size: 2.8em;
-    font-weight: 700;
     text-transform: uppercase;
 }
 
-.sub-text {
+.sub-text, .text-box {
     line-height: 2em;
+}
+
+.about-container {
+    gap: 30px;
+    margin-block: 30px;
+}
+
+.text-box {
+    width: 70%;
+}
+
+.about-container img {
+    width: 30%;
+}
+
+.reversed {
+    flex-direction: row-reverse;
+}
+
+#services, #contact {
+    background: var(--theme-light);
+}
+
+footer {
+    background: var(--black);
 }
